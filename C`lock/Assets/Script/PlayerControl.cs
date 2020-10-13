@@ -4,7 +4,6 @@ using UnityEngine;
 
 enum PlayerState
 {
-    idle,
     run,
     attack,
     down,
@@ -29,7 +28,7 @@ public abstract class PlayerControl : MonoBehaviour
         _player = player;
         _animator = anim;
         _animName = new Dictionary<PlayerState, string>();
-        for (var i = PlayerState.idle;i < PlayerState.max;i++)
+        for (var i = (PlayerState)0;i < PlayerState.max;i++)
         {
             _animName.Add(i,name[(int)i]);
         }
@@ -37,21 +36,22 @@ public abstract class PlayerControl : MonoBehaviour
 
     protected void Update()
     {
-        Vector3 vec = new Vector3();
-        vec.z = Input.GetAxis("Vertical") + Input.GetAxis("Horizontal") * Input.GetAxis("Horizontal");
-        if(vec.z !=0)
+        Vector3 vec = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+        if(vec.z + vec.x != 0)
         {
-            Move(vec.normalized);
+            Move(vec);
         }
         else
         {
             _player._animator.SetBool(_animName[PlayerState.run], false);
         }
-        Debug.Log(vec.normalized);
+        Debug.Log(vec);
     }
 
     public void Move(Vector3 speed)
     {
+        var targetRot  = Quaternion.LookRotation(speed);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 1099);
         _obj.transform.position += speed / 20f;
         _player._animator.SetBool(_animName[PlayerState.run], true);
         _player._animator.SetFloat("Speed", speed.z);
