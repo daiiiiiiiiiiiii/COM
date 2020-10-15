@@ -16,4 +16,9 @@ public class Fighter : PlayerControl
 
         base.Start(this.gameObject, _fighter, anim, name);
     }
+
+    public override void Skill()
+    {
+
+    }
 }
