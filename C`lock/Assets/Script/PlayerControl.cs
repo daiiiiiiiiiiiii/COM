@@ -60,6 +60,11 @@ public abstract class PlayerControl : MonoBehaviour
         _player._animator.SetBool(_animName[PlayerState.run], vec.magnitude != 0);       
     }
 
+    private void CameraMove()
+    {
+
+    }
+
     private void Attack()
     {
 
