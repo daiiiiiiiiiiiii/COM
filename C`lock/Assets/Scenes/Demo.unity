@@ -471,10 +471,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: xbot@Taunt
       objectReference: {fileID: 0}
+    - target: {fileID: 5223238014740035604, guid: fc98f78fc83bebf4bafef072fd3fa6f9,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.5795041
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223238014740035604, guid: fc98f78fc83bebf4bafef072fd3fa6f9,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.83795923
+      objectReference: {fileID: 0}
     - target: {fileID: 5223238014740035605, guid: fc98f78fc83bebf4bafef072fd3fa6f9,
         type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc98f78fc83bebf4bafef072fd3fa6f9, type: 3}
