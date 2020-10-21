@@ -8,70 +8,83 @@ public abstract class PlayerControl : MonoBehaviour
 {
     private Dictionary<int, string> _animName;
     protected Animator _animator;
-    private GameObject _obj;                // 基底クラスのオブジェクトの情報
-    private PlayerControl _player;          // プレイヤーの情報
-    private delegate void StateMethod();    // 状態ごとの処理を行うデリゲート
-    StateMethod State;
-    Animator _anim;
+    protected delegate void StateMethod();    // 状態ごとの処理を行うデリゲート
+    protected StateMethod State;                      
     private Vector3 _dir;       // 動く向き
+    private Camera _camera;
+    private bool _onStartMove = false;   // 動き始めの１フレーム用フラグ
 
-
-
-    protected void Start(GameObject obj,PlayerControl player,Animator anim)
+    protected void Start(Animator anim)
     {
-        State = Idle;
-        _anim = GetComponent<Animator>();
-        
-        _obj = obj;
-        _player = player;
-        _animator = anim;
-        _animName = new Dictionary<int, string>();
+        _camera = FindObjectOfType<Camera>();
+        State = Idle;     
         // 状態ごとのアニメーション遷移に使う名前
-        var name = new string[_anim.parameters.Length];
-        for (var i = 0;i < _anim.parameters.Length;i++)
+        _animName = new Dictionary<int, string>();
+        _animator = anim;
+        for (var i = 0;i < _animator.parameters.Length;i++)
         {
-            _animName.Add(i, _anim.parameters[(int)i].name);
+            _animName.Add(i, _animator.parameters[(int)i].name);
         }
     }
 
     private void Update()
     {
-        _dir = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
-        if (Input.GetButtonUp("Skill"))
-        {
-            _player.Skill();
-        }
+        var beforeState = State;
+        _dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         if (_dir.magnitude != 0)
         {
-            Move();
+            if (_onStartMove)
+            {
+                AdjustmentDirection();
+            }
+            State = Move;
         }
-        else
+        if(State == null)
+        {            
+            State = Idle;
+            _animator.SetBool(_animName[0], _dir.magnitude != 0);
+        }
+        if (Input.GetButtonDown("HA"))
         {
+            State = Action;
+        }
+        if(State != Move)
+        {
+            _onStartMove = true;
         }
         State();
-        _player._animator.SetBool(_animName[0], _dir.magnitude != 0);       
+    }
+
+    void AdjustmentDirection()
+    {
+        var rot = _camera.transform.rotation;
+        rot.x = 0;
+        transform.forward = rot * Vector3.forward;
+        _onStartMove = false;
     }
 
     //////ここから状態ごとのメソッド
     private void Idle()
     {
-
+        // いまのところ何もしない
+        Debug.Log(State.Method);
+        State = null;
     }
 
-    private void Attack()
-    {
-        int a = 0;
-    }
+    // 各キャラごとの実装
+    public abstract void Action();
 
     // プレイヤーのアクションメソッド
     // 移動
     private void Move()
     {
-        var targetRot  = Quaternion.LookRotation(_dir);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 10);
-        _obj.transform.position += _dir / 20f;
-        _player._animator.SetBool(_animName[0], true);
-        _player._animator.SetFloat("Speed", _dir.z);
+        //var targetRot  = Quaternion.LookRotation(_dir);
+        //transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 10);
+        //transform.position += _dir / 60f;
+        //_animator.SetBool(_animName[0], true);
+        //_animator.SetFloat("Speed", _dir.z);
+        Debug.Log(State.Method);
+        State = null;
     }
     // 固有スキル使用
     public abstract void Skill();

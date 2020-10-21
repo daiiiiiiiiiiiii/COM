@@ -2,17 +2,21 @@
 
 public class Swordsman : PlayerControl
 {
-    PlayerControl _sword;
     void Start()
     {
         
-        _sword = this;
         var anim = GetComponent<Animator>();
 
-        base.Start(this.gameObject, _sword, anim);
+        base.Start(anim);
     }
 
     public override void Skill()
     {
+    }
+
+    public override void Action()
+    {
+        State = Action;
+        Debug.Log(State.Method);
     }
 }

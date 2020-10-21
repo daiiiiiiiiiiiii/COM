@@ -16,7 +16,6 @@ public class CameraTrack : MonoBehaviour
     void Update()
     {
         _rotate = Input.GetAxis("Horizontal_R");
-        // _rotate = Input.GetAxis("Vertical_R");
         AdjustmentPosition();
         transform.position = _player.transform.position + _offset;
     }
