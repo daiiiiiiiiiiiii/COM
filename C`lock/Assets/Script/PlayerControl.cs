@@ -6,13 +6,17 @@ using UnityEngine;
 // Moveなどはここで
 public abstract class PlayerControl : MonoBehaviour
 {
-    private Dictionary<int, string> _animName;
     protected Animator _animator;
-    protected delegate void StateMethod();    // 状態ごとの処理を行うデリゲート
-    protected StateMethod State;                      
+    protected delegate void StateMethod();  // 状態ごとの処理を行うデリゲート
+    protected StateMethod State;
+    [SerializeField]
+    protected float _speed;     // キャラごとの速度 継承先で初期化
+
+    private Dictionary<int, string> _animName;
     private Vector3 _dir;       // 動く向き
     private Camera _camera;
     private bool _onStartMove = false;   // 動き始めの１フレーム用フラグ
+    private Vector3 _targetPos;
 
     protected void Start(Animator anim)
     {
@@ -29,7 +33,6 @@ public abstract class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        var beforeState = State;
         _dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         if (_dir.magnitude != 0)
         {
@@ -55,14 +58,6 @@ public abstract class PlayerControl : MonoBehaviour
         State();
     }
 
-    void AdjustmentDirection()
-    {
-        var rot = _camera.transform.rotation;
-        rot.x = 0;
-        transform.forward = rot * Vector3.forward;
-        _onStartMove = false;
-    }
-
     //////ここから状態ごとのメソッド
     private void Idle()
     {
@@ -74,15 +69,18 @@ public abstract class PlayerControl : MonoBehaviour
     // 各キャラごとの実装
     public abstract void Action();
 
-    // プレイヤーのアクションメソッド
     // 移動
-    private void Move()
+    void AdjustmentDirection()
     {
-        //var targetRot  = Quaternion.LookRotation(_dir);
-        //transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 10);
-        //transform.position += _dir / 60f;
-        //_animator.SetBool(_animName[0], true);
-        //_animator.SetFloat("Speed", _dir.z);
+        _targetPos = _camera.transform.forward;
+        _onStartMove = false;
+    }
+    private void Move()
+    {        
+        var targetRot = Quaternion.LookRotation(_dir) * Quaternion.LookRotation(_targetPos);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 10);
+        transform.position += transform.forward * Time.deltaTime * _speed;
+        _animator.SetBool(_animName[0], true);
         Debug.Log(State.Method);
         State = null;
     }

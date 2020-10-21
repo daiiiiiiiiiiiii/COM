@@ -6,7 +6,6 @@ public class Swordsman : PlayerControl
     {
         
         var anim = GetComponent<Animator>();
-
         base.Start(anim);
     }
 
