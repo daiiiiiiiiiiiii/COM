@@ -3,8 +3,7 @@
 public class Swordsman : PlayerControl
 {
     void Start()
-    {
-        
+    {        
         var anim = GetComponent<Animator>();
         base.Start(anim);
     }
@@ -15,7 +14,7 @@ public class Swordsman : PlayerControl
 
     public override void Action()
     {
-        State = Action;
+        _animator.SetBool(_animName[1], true);
         Debug.Log(State.Method);
     }
 }

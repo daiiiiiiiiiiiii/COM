@@ -18,7 +18,6 @@ public class Fighter : PlayerControl
 
     public override void Action()
     {
-        State = Action;
         Debug.Log(State.Method);
     }
 }
