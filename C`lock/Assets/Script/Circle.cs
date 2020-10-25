@@ -20,7 +20,6 @@ public class Circle : MonoBehaviour
     {
         _renderer = GetComponent<LineRenderer>();
         _player = transform.parent;
-        _color = Color.green;
         Init();
     }
 
@@ -41,7 +40,7 @@ public class Circle : MonoBehaviour
             var rad = Mathf.Deg2Rad * (i * 360f / _count);
             var x = Mathf.Sin(rad) * _radius;
             var z = Mathf.Cos(rad) * _radius;
-            _points[(int)i] = new Vector3(x + pos.x, pos.y, z + pos.z);
+            _points[(int)i] = new Vector3(x + pos.x, pos.y, z + pos.z + 1);
         }
         _renderer.SetPositions(_points);
     }
@@ -59,7 +58,7 @@ public class Circle : MonoBehaviour
             var rad = Mathf.Deg2Rad * (i * 360f / _count);
             var x = Mathf.Sin(rad) * _radius;
             var z = Mathf.Cos(rad) * _radius;
-            _points[(int)i] = new Vector3(pos.x + x, pos.y, pos.z + z);
+            _points[(int)i] = new Vector3(pos.x + x, pos.y, pos.z + z + 1);
         }
         _renderer.SetPositions(_points);
     }

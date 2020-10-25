@@ -42,6 +42,8 @@ public abstract class PlayerControl : MonoBehaviour
         }
         if (State == null)
         {
+            var col = transform.Find("Range").GetComponent<Collider>();
+            if ()
             State = Idle;
             _animator.SetBool(_animName[0], _dir.magnitude != 0);
         }
@@ -66,7 +68,7 @@ public abstract class PlayerControl : MonoBehaviour
     {
         _targetPos = _camera.transform.forward;
         var targetRot = Quaternion.LookRotation(_dir) * Quaternion.LookRotation(_targetPos);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 10);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 5);
         transform.position += transform.forward * Time.deltaTime * _speed;
         _animator.SetBool(_animName[0], true);
         Debug.Log(State.Method);

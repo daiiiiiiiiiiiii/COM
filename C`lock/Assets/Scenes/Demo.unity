@@ -316,6 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 581284558}
   - component: {fileID: 581284560}
+  - component: {fileID: 581284561}
   - component: {fileID: 581284559}
   m_Layer: 0
   m_Name: Range
@@ -345,7 +346,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581284557}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -442,14 +443,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581284557}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf11c1bc97108e44a83f4278aa4f8cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 2
   _lineWidth: 0.3
-  _color: {r: 0.5372549, g: 1, b: 0.4392157, a: 1}
+  _color: {r: 1, g: 0.43921566, b: 0.61414576, a: 1}
+--- !u!136 &581284561
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581284557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!1 &627454845
 GameObject:
   m_ObjectHideFlags: 0
