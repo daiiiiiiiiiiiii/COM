@@ -8,13 +8,25 @@ public class Swordsman : PlayerControl
         base.Start(anim);
     }
 
-    public override void Skill()
+    public override int Skill()
     {
+        return 3;
     }
 
-    public override void Action()
+    public override int Action()
     {
-        _animator.SetBool(_animName[1], true);
-        Debug.Log(State.Method);
+        return 2;
+    }
+
+    public override void SetAnim(int num)
+    {
+        for(int i = 0; i < _animator.parameterCount; i++)
+        {
+            _animator.SetBool(_animName[i], false);
+            if (i == num)
+            {
+                _animator.SetBool(_animName[i], true);
+            }
+        }
     }
 }

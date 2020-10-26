@@ -10,7 +10,7 @@ public class CameraTrack : MonoBehaviour
     float _rotate;
     void Start()
     {
-        _offset = new Vector3(0, transform.position.y, transform.position.z);
+        _offset = new Vector3(0, 2.8f, -6.4f);
     }
 
     void Update()

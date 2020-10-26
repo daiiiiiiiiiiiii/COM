@@ -16,6 +16,8 @@ public class Circle : MonoBehaviour
     private Vector3[] _points;          // 円の座標
     private Transform _player;          // 攻撃範囲を表示しているプレイヤー
 
+    public GameObject _serch { private set; get; }  // 
+
     void Start()
     {
         _renderer = GetComponent<LineRenderer>();
@@ -48,6 +50,18 @@ public class Circle : MonoBehaviour
     void Update()
     {
         SetPosition();
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if (col != _player && col.tag == "Player")
+        {
+            _serch = col.gameObject;
+        }
+    }
+    private void OnTriggerExit(Collider col)
+    {
+        _serch = null;
     }
 
     private void SetPosition()

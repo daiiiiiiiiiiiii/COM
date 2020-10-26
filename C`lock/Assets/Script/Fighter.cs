@@ -11,13 +11,17 @@ public class Fighter : PlayerControl
         base.Start(anim);
     }
 
-    public override void Skill()
+    public override int Skill()
     {
-
+        return 3;
     }
 
-    public override void Action()
+    public override int Action()
     {
-        Debug.Log(State.Method);
+        return 2;
+    }
+
+    public override void SetAnim(int num)
+    {
     }
 }
