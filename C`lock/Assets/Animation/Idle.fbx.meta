@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 28d58062516f4bf45a0f3a6974d5e178
+guid: 51cafe63d3ef7834fb5db4832088e13e
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Kick3
+    second: IdleMotion
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Kick3
+      name: IdleMotion
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 50
+      lastFrame: 132
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -48,10 +48,10 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -273,7 +273,7 @@ ModelImporter:
         length: 0
         modified: 0
     - boneName: arissa:Head
-      humanName: RightEye
+      humanName: LeftEye
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -529,418 +529,86 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Kick3(Clone)
+    - name: Idle(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: arissa:Meshes
-      parentName: Kick3(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:Body_Geo
-      parentName: arissa:Meshes
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:Cloak_Geo
-      parentName: arissa:Meshes
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:Weapons_Geo
-      parentName: arissa:Meshes
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:Skirt_Geo
-      parentName: arissa:Meshes
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: arissa:Hips
-      parentName: Kick3(Clone)
-      position: {x: 0.00000749357, y: 0.9917914, z: -0.00008274019}
-      rotation: {x: 0.000000005820767, y: 3.3881325e-17, z: 0.000000005820766, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightUpLeg
-      parentName: arissa:Hips
-      position: {x: 0.09633789, y: -0.03273254, z: -0.00000001}
-      rotation: {x: -0.000000008731151, y: -0.000000023283064, z: 0.000000011641532,
-        w: 1}
-      scale: {x: 1.0000001, y: 1, z: 1.0000001}
-    - name: arissa:RightLeg
-      parentName: arissa:RightUpLeg
-      position: {x: -0, y: -0.41357368, z: -0.00839146}
-      rotation: {x: -0.000000008731147, y: 0.000000034924597, z: -0.00000004074536,
-        w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightFoot
-      parentName: arissa:RightLeg
-      position: {x: -0.00012607, y: -0.39562064, z: -0.01738506}
-      rotation: {x: 0.00000002037268, y: 1.7763568e-15, z: 0.000000011641529, w: 1}
-      scale: {x: 1, y: 1, z: 1.0000001}
-    - name: arissa:RightToeBase
-      parentName: arissa:RightFoot
-      position: {x: 0.0018331, y: -0.12193085, z: 0.082822636}
-      rotation: {x: -0.000000010186341, y: -0.000000023283063, z: 0.000000008731149,
-        w: 1}
-      scale: {x: 1, y: 1, z: 0.9999999}
-    - name: arissa:RightFootToeBase_End
-      parentName: arissa:RightToeBase
-      position: {x: -0.00003194809, y: -0.00009729385, z: 0.14127442}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:LeftUpLeg
-      parentName: arissa:Hips
-      position: {x: -0.09633789, y: -0.03273254, z: -0.00000001}
-      rotation: {x: -0.00000002910383, y: 0.000000023283068, z: -0.0000000058207656,
-        w: 1}
-      scale: {x: 1, y: 1.0000001, z: 1}
-    - name: arissa:LeftLeg
-      parentName: arissa:LeftUpLeg
-      position: {x: -0, y: -0.41357368, z: -0.00839146}
-      rotation: {x: 0.000000020918378, y: -0.000000034924604, z: -0.000000006275515,
-        w: 1}
-      scale: {x: 1, y: 0.9999998, z: 1.0000001}
-    - name: arissa:LeftFoot
-      parentName: arissa:LeftLeg
-      position: {x: -0.00012605, y: -0.39562064, z: -0.01738506}
-      rotation: {x: 0.0000000023648639, y: 0.000000011641534, z: 0.0000000062753367,
-        w: 1}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1}
-    - name: arissa:LeftToeBase
-      parentName: arissa:LeftFoot
-      position: {x: 0.00183287, y: -0.12193085, z: 0.082822636}
-      rotation: {x: -1.7763568e-13, y: -0.000000011641532, z: 2.220446e-13, w: 1}
-      scale: {x: 0.9999999, y: 1, z: 0.9999999}
-    - name: arissa:LeftFootToeBase_End
-      parentName: arissa:LeftToeBase
-      position: {x: 1.7763568e-17, y: -0.00009729385, z: 0.14127442}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      parentName: Idle(Clone)
+      position: {x: 0.0014416294, y: 0.93509656, z: 0.0061015883}
+      rotation: {x: -0.0060517713, y: 0.06417002, z: 0.011974836, w: 0.9978488}
       scale: {x: 1, y: 1, z: 1}
     - name: arissa:Spine
       parentName: arissa:Hips
-      position: {x: -0, y: 0.09226319, z: 0.01577133}
-      rotation: {x: -0.000000023283064, y: -0.000000023283064, z: -0.000000014551915,
-        w: 1}
+      position: {x: -0, y: 0.092263, z: 0.015771}
+      rotation: {x: 0.06570727, y: -0.06329141, z: -0.0038747722, w: 0.99582213}
       scale: {x: 1, y: 1, z: 1}
     - name: arissa:Spine1
       parentName: arissa:Spine
-      position: {x: -0, y: 0.16254029, z: -0.0016560499}
-      rotation: {x: 0.000000023283064, y: 3.5527137e-15, z: 0.000000026193446, w: 1}
-      scale: {x: 1, y: 1.0000001, z: 1}
+      position: {x: -0, y: 0.16253999, z: -0.001656}
+      rotation: {x: 0.0049527925, y: -0.00861144, z: 0.0012454058, w: 0.9999499}
+      scale: {x: 1, y: 1, z: 1}
     - name: arissa:Spine2
       parentName: arissa:Spine1
-      position: {x: -0, y: 0.13639648, z: -0.01292305}
-      rotation: {x: -0.0000000058207656, y: 0.00000002328306, z: -0.000000017462296,
-        w: 1}
+      position: {x: -0, y: 0.13639599, z: -0.012922999}
+      rotation: {x: 0.0049772593, y: -0.008583437, z: 0.0012965996, w: 0.99994993}
       scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightShoulder
+    - name: arissa:Neck
       parentName: arissa:Spine2
-      position: {x: 0.06140198, y: 0.10187011, z: -0.037932437}
-      rotation: {x: 0.000000023283064, y: 0.000000023283068, z: -0.0000000058207674,
-        w: 1}
-      scale: {x: 1, y: 0.99999976, z: 1}
-    - name: arissa:RightArm
-      parentName: arissa:RightShoulder
-      position: {x: 0.09023084, y: -0.01113005, z: -0.01793469}
-      rotation: {x: -0.000000023283063, y: -0.000000046566132, z: -0.000000013096721,
-        w: 1}
-      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
-    - name: arissa:RightForeArm
-      parentName: arissa:RightArm
-      position: {x: 0.2768701, y: 0, z: 0}
-      rotation: {x: -0.0000000016370928, y: 0.000000093132265, z: 0.000000011277733,
-        w: 1}
+      position: {x: -0, y: 0.13877401, z: -0.043541998}
+      rotation: {x: 0.026746733, y: -0.011236702, z: 0.01609992, w: 0.99944943}
       scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHand
-      parentName: arissa:RightForeArm
-      position: {x: 0.27873778, y: 0, z: 0}
-      rotation: {x: -0.000000004183672, y: -0.0000000698492, z: -0.000000024374458,
-        w: 1}
-      scale: {x: 0.9999998, y: 0.99999976, z: 1.0000001}
-    - name: arissa:RightHandMiddle1
-      parentName: arissa:RightHand
-      position: {x: 0.10194805, y: 0.00718167, z: 0.0097816195}
-      rotation: {x: -0.000000005820765, y: 0.00000001164153, z: 0.00000003783498,
-        w: 1}
-      scale: {x: 1, y: 1.0000002, z: 0.9999999}
-    - name: arissa:RightHandMiddle2
-      parentName: arissa:RightHandMiddle1
-      position: {x: 0.039601438, y: -0.00047074998, z: 0.00064152}
-      rotation: {x: -4.440892e-15, y: -0.000000005820764, z: -0.000000026193447, w: 1}
-      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000006}
-    - name: arissa:RightHandMiddle3
-      parentName: arissa:RightHandMiddle2
-      position: {x: 0.02860014, y: -0.00226118, z: 0.000055149998}
-      rotation: {x: 2.6645353e-15, y: -0.0000000058207665, z: 0.000000020372681, w: 1}
-      scale: {x: 0.9999995, y: 0.99999964, z: 0.99999934}
-    - name: arissa:RightHandMiddle4
-      parentName: arissa:RightHandMiddle3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+    - name: arissa:Neck1
+      parentName: arissa:Neck
+      position: {x: -0, y: 0.0434, z: 0.009269}
+      rotation: {x: 0.026746057, y: -0.011236567, z: 0.01609978, w: 0.99944943}
       scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandMiddle5
-      parentName: arissa:RightHandMiddle3
-      position: {x: 0.028462019, y: 0.00044646682, z: -0.000003400448}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+    - name: arissa:Head
+      parentName: arissa:Neck1
+      position: {x: -0, y: 0.040266, z: 0.0085849995}
+      rotation: {x: 0.026747383, y: -0.011236724, z: 0.016100034, w: 0.99944943}
       scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandPinky1
-      parentName: arissa:RightHand
-      position: {x: 0.09678, y: -0.00119138, z: -0.025525259}
-      rotation: {x: 0.000000029103827, y: -0.000000011641533, z: 0.000000032014214,
-        w: 1}
-      scale: {x: 1.0000002, y: 1.0000001, z: 1}
-    - name: arissa:RightHandPinky2
-      parentName: arissa:RightHandPinky1
-      position: {x: 0.03093815, y: -0.00076211995, z: 0.00016794}
-      rotation: {x: -0.00000002328306, y: 0.000000023283066, z: -0.000000005820767,
-        w: 1}
-      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000005}
-    - name: arissa:RightHandPinky3
-      parentName: arissa:RightHandPinky2
-      position: {x: 0.027224878, y: -0.00064054, z: 0.00023157}
-      rotation: {x: 0.0000000029103833, y: -0.000000034924597, z: -0.000000021827873,
-        w: 1}
-      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
-    - name: arissa:RightHandPinky4
-      parentName: arissa:RightHandPinky3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandPinky5
-      parentName: arissa:RightHandPinky3
-      position: {x: 0.017246913, y: 0.0014029079, z: 0.000801888}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandRing1
-      parentName: arissa:RightHand
-      position: {x: 0.09930226, y: 0.0059195296, z: -0.00958618}
-      rotation: {x: 0.000000017462298, y: 1.8634727e-16, z: 0.000000032014214, w: 1}
-      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
-    - name: arissa:RightHandRing2
-      parentName: arissa:RightHandRing1
-      position: {x: 0.03864509, y: -0.00198951, z: -0.00014744999}
-      rotation: {x: -0.000000023283064, y: 0.000000011641534, z: 0.000000005820767,
-        w: 1}
-      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000011}
-    - name: arissa:RightHandRing3
-      parentName: arissa:RightHandRing2
-      position: {x: 0.029119989, y: -0.0013485099, z: -0.00028407}
-      rotation: {x: -1.7763568e-15, y: -0.000000034924597, z: -0.000000005820768,
-        w: 1}
-      scale: {x: 0.9999996, y: 1.0000004, z: 0.9999997}
-    - name: arissa:RightHandRing4
-      parentName: arissa:RightHandRing3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandRing5
-      parentName: arissa:RightHandRing3
-      position: {x: 0.021593405, y: 0.0012975548, z: 0.00048559584}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandIndex1
-      parentName: arissa:RightHand
-      position: {x: 0.1007241, y: 0.00489587, z: 0.02761094}
-      rotation: {x: 0.00000002328306, y: -0.00000002328306, z: 0.00000004656613, w: 1}
-      scale: {x: 1.0000002, y: 1, z: 0.9999999}
-    - name: arissa:RightHandIndex2
-      parentName: arissa:RightHandIndex1
-      position: {x: 0.037340887, y: 0, z: 0.00051251997}
-      rotation: {x: -0.0000000058207634, y: 0.000000017462295, z: -0.000000033469405,
-        w: 1}
-      scale: {x: 0.99999976, y: 1.0000004, z: 0.9999999}
-    - name: arissa:RightHandIndex3
-      parentName: arissa:RightHandIndex2
-      position: {x: 0.02873717, y: -0.00136415, z: 0}
-      rotation: {x: -1.7763568e-15, y: -0.000000005820768, z: 0.000000007275956, w: 1}
-      scale: {x: 1.0000007, y: 1.0000001, z: 1.0000011}
-    - name: arissa:RightHandIndex4
-      parentName: arissa:RightHandIndex3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandIndex5
-      parentName: arissa:RightHandIndex3
-      position: {x: 0.023514802, y: 0.0013644915, z: 0.0004046453}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandThumb1
-      parentName: arissa:RightHand
-      position: {x: 0.025177691, y: -0.00936661, z: 0.025136689}
-      rotation: {x: -0.06131124, y: -0.04160982, z: 0.053003125, w: 0.9958415}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1}
-    - name: arissa:RightHandThumb2
-      parentName: arissa:RightHandThumb1
-      position: {x: 0.03308852, y: -0.0114923, z: 0.029253129}
-      rotation: {x: 0.013132257, y: -0.055945758, z: -0.036832478, w: 0.9976678}
-      scale: {x: 1.0000008, y: 1.0000002, z: 1.0000008}
-    - name: arissa:RightHandThumb3
-      parentName: arissa:RightHandThumb2
-      position: {x: 0.02827938, y: -0.00457375, z: 0.01702996}
-      rotation: {x: 0.000000012096279, y: -0.000000017462298, z: 0.0000000036379786,
-        w: 1}
-      scale: {x: 0.9999998, y: 1, z: 0.9999996}
-    - name: arissa:RightHandThumb4
-      parentName: arissa:RightHandThumb3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:RightHandThumb5
-      parentName: arissa:RightHandThumb3
-      position: {x: 0.025860932, y: 0.0013020268, z: 0.018853268}
+    - name: arissa:HeadTop_End
+      parentName: arissa:Head
+      position: {x: -0, y: 0.206288, z: 0.001231}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftShoulder
       parentName: arissa:Spine2
-      position: {x: -0.06144226, y: 0.10187011, z: -0.037932437}
-      rotation: {x: -0.000000023283064, y: -0.000000023283064, z: -5.421011e-16, w: 1}
-      scale: {x: 1, y: 0.9999999, z: 1.0000001}
+      position: {x: -0.061442, y: 0.10187, z: -0.037932}
+      rotation: {x: 0.00960039, y: -0.0071489746, z: 0.044855986, w: 0.9989218}
+      scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftArm
       parentName: arissa:LeftShoulder
-      position: {x: -0.09019056, y: -0.01113005, z: -0.01793469}
-      rotation: {x: -0.00000004656613, y: -0, z: -0.000000005820766, w: 1}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+      position: {x: -0.090191, y: -0.01113, z: -0.017934998}
+      rotation: {x: -0.18085548, y: 0.037064124, z: -0.033612896, w: 0.9822361}
+      scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftForeArm
       parentName: arissa:LeftArm
-      position: {x: -0.2768701, y: 0, z: 0}
-      rotation: {x: 0.00000005820766, y: 0.000000023283064, z: 0.0000000058207683,
-        w: 1}
-      scale: {x: 1.0000002, y: 0.9999998, z: 0.9999999}
+      position: {x: -0.27686998, y: 0, z: 0}
+      rotation: {x: -0.022062318, y: -0.0031837227, z: -0.0144952545, w: 0.9996465}
+      scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftHand
       parentName: arissa:LeftForeArm
-      position: {x: -0.27873778, y: 0, z: 0}
-      rotation: {x: -0.000000011641529, y: 6.0986356e-16, z: -0.000000017462296, w: 1}
-      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000005}
-    - name: arissa:LeftHandMiddle1
-      parentName: arissa:LeftHand
-      position: {x: -0.10194805, y: 0.00718167, z: 0.0097816195}
-      rotation: {x: 0.00000002328306, y: 0.000000034924597, z: 0.000000029103829,
-        w: 1}
-      scale: {x: 1.0000002, y: 1.0000002, z: 1}
-    - name: arissa:LeftHandMiddle2
-      parentName: arissa:LeftHandMiddle1
-      position: {x: -0.039601438, y: -0.00047074998, z: 0.00064152}
-      rotation: {x: 0.000000023283064, y: -0.00000004656613, z: -0.000000017462298,
-        w: 1}
-      scale: {x: 0.99999994, y: 1, z: 0.9999997}
-    - name: arissa:LeftHandMiddle3
-      parentName: arissa:LeftHandMiddle2
-      position: {x: -0.02860014, y: -0.00226118, z: 0.000055149998}
-      rotation: {x: -0.000000034924597, y: 0.000000011641532, z: 0.0000000174623,
-        w: 1}
-      scale: {x: 1, y: 1.0000004, z: 1.0000005}
-    - name: arissa:LeftHandMiddle4
-      parentName: arissa:LeftHandMiddle3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:LeftHandMiddle5
-      parentName: arissa:LeftHandMiddle3
-      position: {x: -0.028058115, y: 0.0016980821, z: -0.000058134305}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:LeftHandPinky1
-      parentName: arissa:LeftHand
-      position: {x: -0.09678, y: -0.00119138, z: -0.025525259}
-      rotation: {x: 0.000000046566125, y: -0.000000011641532, z: 0.000000029103829,
-        w: 1}
-      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999997}
-    - name: arissa:LeftHandPinky2
-      parentName: arissa:LeftHandPinky1
-      position: {x: -0.03093815, y: -0.00076211995, z: 0.00016794}
-      rotation: {x: -0.00000004656613, y: 0.000000034924597, z: -0.000000023283064,
-        w: 1}
-      scale: {x: 1, y: 1.0000001, z: 1.0000002}
-    - name: arissa:LeftHandPinky3
-      parentName: arissa:LeftHandPinky2
-      position: {x: -0.027224878, y: -0.00064054, z: 0.00023157}
-      rotation: {x: 0.000000024738256, y: -0.00000004656613, z: 0.000000026193447,
-        w: 1}
-      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999998}
-    - name: arissa:LeftHandPinky4
-      parentName: arissa:LeftHandPinky3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:LeftHandPinky5
-      parentName: arissa:LeftHandPinky3
-      position: {x: -0.017282749, y: 0.0018108648, z: -0.00011083935}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:LeftHandRing1
-      parentName: arissa:LeftHand
-      position: {x: -0.09930226, y: 0.0059195296, z: -0.00958618}
-      rotation: {x: 0.00000001164153, y: -0.000000011641534, z: 0.000000023283064,
-        w: 1}
-      scale: {x: 1.0000002, y: 1.0000002, z: 0.9999998}
-    - name: arissa:LeftHandRing2
-      parentName: arissa:LeftHandRing1
-      position: {x: -0.03864509, y: -0.00198951, z: -0.00014744999}
-      rotation: {x: 0.00000001164153, y: 0.000000023283066, z: -0.000000005820767,
-        w: 1}
-      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
-    - name: arissa:LeftHandRing3
-      parentName: arissa:LeftHandRing2
-      position: {x: -0.029119989, y: -0.0013485099, z: -0.00028407}
-      rotation: {x: 0.000000011641529, y: -0.000000034924597, z: 0.000000017462298,
-        w: 1}
-      scale: {x: 1, y: 1.0000001, z: 1.0000002}
-    - name: arissa:LeftHandRing4
-      parentName: arissa:LeftHandRing3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:LeftHandRing5
-      parentName: arissa:LeftHandRing3
-      position: {x: -0.020833196, y: 0.0006300722, z: -0.00019996724}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:LeftHandIndex1
-      parentName: arissa:LeftHand
-      position: {x: -0.1007241, y: 0.00489587, z: 0.02761094}
-      rotation: {x: -3.5527137e-15, y: -8.131514e-16, z: 0.000000017462296, w: 1}
-      scale: {x: 1.0000005, y: 1, z: 0.99999994}
-    - name: arissa:LeftHandIndex2
-      parentName: arissa:LeftHandIndex1
-      position: {x: -0.037340887, y: 0, z: 0.00051251997}
-      rotation: {x: -3.5527137e-15, y: 0.000000005820765, z: 0.000000017462298, w: 1}
-      scale: {x: 0.99999934, y: 1.0000001, z: 0.9999998}
-    - name: arissa:LeftHandIndex3
-      parentName: arissa:LeftHandIndex2
-      position: {x: -0.02873717, y: -0.00136415, z: 0}
-      rotation: {x: 0.000000023283068, y: -0.0000000058207656, z: -0.000000017462298,
-        w: 1}
-      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
-    - name: arissa:LeftHandIndex4
-      parentName: arissa:LeftHandIndex3
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arissa:LeftHandIndex5
-      parentName: arissa:LeftHandIndex3
-      position: {x: -0.022482552, y: 0.0026161068, z: 0.000072233735}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      position: {x: -0.278738, y: 0, z: 0}
+      rotation: {x: 0.23809044, y: -0.080956995, z: -0.025927693, w: 0.9675157}
       scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftHandThumb1
       parentName: arissa:LeftHand
-      position: {x: -0.025177691, y: -0.00936661, z: 0.025136689}
-      rotation: {x: -0.061312087, y: 0.041610304, z: -0.05300385, w: 0.9958414}
-      scale: {x: 1, y: 1.0000001, z: 0.9999998}
+      position: {x: -0.025178, y: -0.009366999, z: 0.025137}
+      rotation: {x: -0.1281765, y: 0.043054156, z: -0.12067, w: 0.9834409}
+      scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftHandThumb2
       parentName: arissa:LeftHandThumb1
-      position: {x: -0.03308852, y: -0.0114923, z: 0.029253129}
-      rotation: {x: 0.013132978, y: 0.055947278, z: 0.03683403, w: 0.9976677}
-      scale: {x: 1.0000005, y: 1, z: 1.0000002}
+      position: {x: -0.033089, y: -0.011491999, z: 0.029252999}
+      rotation: {x: 0.048039332, y: 0.063967615, z: 0.049835317, w: 0.9955485}
+      scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftHandThumb3
       parentName: arissa:LeftHandThumb2
-      position: {x: -0.02827938, y: -0.00457375, z: 0.01702996}
-      rotation: {x: -0.000000048612492, y: 0.000000022555465, z: 0.0000000072759563,
-        w: 1}
-      scale: {x: 0.9999997, y: 1.0000001, z: 0.9999998}
+      position: {x: -0.028278999, y: -0.004574, z: 0.017029999}
+      rotation: {x: 0.0732147, y: -0.45478338, z: 0.13414045, w: 0.87739277}
+      scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftHandThumb4
       parentName: arissa:LeftHandThumb3
       position: {x: -0, y: 0, z: 0}
@@ -948,28 +616,302 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: arissa:LeftHandThumb5
       parentName: arissa:LeftHandThumb3
-      position: {x: -0.028857075, y: -0.0014931454, z: 0.013814603}
+      position: {x: -0.028856998, y: -0.001493, z: 0.013815}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: arissa:Neck
+    - name: arissa:LeftHandMiddle1
+      parentName: arissa:LeftHand
+      position: {x: -0.101948, y: 0.007182, z: 0.0097819995}
+      rotation: {x: 0.0015814004, y: 0.03856329, z: 0.01517621, w: 0.9991397}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandMiddle2
+      parentName: arissa:LeftHandMiddle1
+      position: {x: -0.039601, y: -0.00047099998, z: 0.000642}
+      rotation: {x: -0.0006279178, y: 0.0071254387, z: -0.033488113, w: 0.9994135}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandMiddle3
+      parentName: arissa:LeftHandMiddle2
+      position: {x: -0.028599998, y: -0.002261, z: 0.000054999997}
+      rotation: {x: 0.000019640565, y: -0.0054951743, z: 0.42385665, w: 0.90571266}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandMiddle4
+      parentName: arissa:LeftHandMiddle3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandMiddle5
+      parentName: arissa:LeftHandMiddle3
+      position: {x: -0.028058, y: 0.0016979999, z: -0.000057999998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandIndex1
+      parentName: arissa:LeftHand
+      position: {x: -0.100724, y: 0.004896, z: 0.027611}
+      rotation: {x: 0.0024882702, y: 0.039763976, z: 0.019957975, w: 0.9990066}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandIndex2
+      parentName: arissa:LeftHandIndex1
+      position: {x: -0.037341, y: 0, z: 0.000513}
+      rotation: {x: -0.0003248351, y: 0.0068627377, z: -0.023710867, w: 0.99969524}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandIndex3
+      parentName: arissa:LeftHandIndex2
+      position: {x: -0.028737, y: -0.0013639999, z: 0}
+      rotation: {x: 0.00044910912, y: -0.009340365, z: 0.4814447, w: 0.8764266}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandIndex4
+      parentName: arissa:LeftHandIndex3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandIndex5
+      parentName: arissa:LeftHandIndex3
+      position: {x: -0.022483, y: 0.002616, z: 0.000071999995}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandRing1
+      parentName: arissa:LeftHand
+      position: {x: -0.099301994, y: 0.00592, z: -0.009586}
+      rotation: {x: -0.000048428756, y: 0.048557874, z: -0.0062169973, w: 0.99880105}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandRing2
+      parentName: arissa:LeftHandRing1
+      position: {x: -0.038645, y: -0.00199, z: -0.000147}
+      rotation: {x: -0.0001688993, y: 0.0029442373, z: 0.0036200825, w: 0.9999891}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandRing3
+      parentName: arissa:LeftHandRing2
+      position: {x: -0.029119998, y: -0.001349, z: -0.000284}
+      rotation: {x: -0.0055547673, y: -0.011831429, z: 0.5838723, w: 0.8117403}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandRing4
+      parentName: arissa:LeftHandRing3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandRing5
+      parentName: arissa:LeftHandRing3
+      position: {x: -0.020833, y: 0.00063, z: -0.0002}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandPinky1
+      parentName: arissa:LeftHand
+      position: {x: -0.09678, y: -0.001191, z: -0.025525}
+      rotation: {x: 0.005431785, y: 0.043521665, z: 0.005829034, w: 0.99902076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandPinky2
+      parentName: arissa:LeftHandPinky1
+      position: {x: -0.030938, y: -0.000762, z: 0.00016799998}
+      rotation: {x: 0.02959185, y: -0.00062397466, z: 0.009387229, w: 0.9995178}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandPinky3
+      parentName: arissa:LeftHandPinky2
+      position: {x: -0.027225, y: -0.00064099993, z: 0.00023199999}
+      rotation: {x: 0.00045071164, y: -0.004653203, z: 0.59781045, w: 0.80162394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandPinky4
+      parentName: arissa:LeftHandPinky3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftHandPinky5
+      parentName: arissa:LeftHandPinky3
+      position: {x: -0.017283, y: 0.0018109999, z: -0.000110999994}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightShoulder
       parentName: arissa:Spine2
-      position: {x: -0, y: 0.13877442, z: -0.043541867}
-      rotation: {x: -0, y: -0, z: -0.000000014551917, w: 1}
-      scale: {x: 0.99999994, y: 0.9999999, z: 1.0000001}
-    - name: arissa:Neck1
-      parentName: arissa:Neck
-      position: {x: -0, y: 0.04340027, z: 0.00926895}
-      rotation: {x: 6.776266e-17, y: -0.000000011641532, z: 0.0000000174623, w: 1}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: arissa:Head
-      parentName: arissa:Neck1
-      position: {x: -0, y: 0.040266108, z: 0.0085852}
-      rotation: {x: 0.000000011641533, y: 0.000000023283064, z: 0.000000005820766,
-        w: 1}
-      scale: {x: 1.0000001, y: 1.0000002, z: 0.99999976}
-    - name: arissa:HeadTop_End
-      parentName: arissa:Head
-      position: {x: -5.1704583e-18, y: 0.20628813, z: 0.0012312889}
+      position: {x: 0.061402, y: 0.10187, z: -0.037932}
+      rotation: {x: 0.021390816, y: -0.10531752, z: 0.04339777, w: 0.9932609}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightArm
+      parentName: arissa:RightShoulder
+      position: {x: 0.090230994, y: -0.01113, z: -0.017934998}
+      rotation: {x: 0.018875448, y: 0.11411384, z: -0.058814343, w: 0.9915456}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightForeArm
+      parentName: arissa:RightArm
+      position: {x: 0.27686998, y: 0, z: 0}
+      rotation: {x: -0.0046836375, y: 0.0041629802, z: 0.0033775528, w: 0.99997467}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHand
+      parentName: arissa:RightForeArm
+      position: {x: 0.278738, y: 0, z: 0}
+      rotation: {x: -0.055027712, y: -0.083226934, z: 0.06152089, w: 0.99310654}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandThumb1
+      parentName: arissa:RightHand
+      position: {x: 0.025178, y: -0.009366999, z: 0.025137}
+      rotation: {x: -0.10866743, y: -0.039954524, z: 0.07402145, w: 0.99051297}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandThumb2
+      parentName: arissa:RightHandThumb1
+      position: {x: 0.033089, y: -0.011491999, z: 0.029252999}
+      rotation: {x: 0.040458195, y: -0.06293108, z: -0.05353007, w: 0.9957597}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandThumb3
+      parentName: arissa:RightHandThumb2
+      position: {x: 0.028278999, y: -0.004574, z: 0.017029999}
+      rotation: {x: 0.19224496, y: 0.48550096, z: 0.0656523, w: 0.85030615}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandThumb4
+      parentName: arissa:RightHandThumb3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandThumb5
+      parentName: arissa:RightHandThumb3
+      position: {x: 0.025861, y: 0.0013019999, z: 0.018853}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandIndex1
+      parentName: arissa:RightHand
+      position: {x: 0.100724, y: 0.004896, z: 0.027611}
+      rotation: {x: 0.00234076, y: -0.039757714, z: -0.017293183, w: 0.999057}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandIndex2
+      parentName: arissa:RightHandIndex1
+      position: {x: 0.037341, y: 0, z: 0.000513}
+      rotation: {x: -0.00032573042, y: -0.006864676, z: 0.02370512, w: 0.99969536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandIndex3
+      parentName: arissa:RightHandIndex2
+      position: {x: 0.028737, y: -0.0013639999, z: 0}
+      rotation: {x: 0.004585466, y: 0.017500434, z: -0.54334515, w: 0.83931446}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandIndex4
+      parentName: arissa:RightHandIndex3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandIndex5
+      parentName: arissa:RightHandIndex3
+      position: {x: 0.023515, y: 0.0013639999, z: 0.000405}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandMiddle1
+      parentName: arissa:RightHand
+      position: {x: 0.101948, y: 0.007182, z: 0.0097819995}
+      rotation: {x: 0.0013582739, y: -0.03857413, z: -0.011061003, w: 0.9991936}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandMiddle2
+      parentName: arissa:RightHandMiddle1
+      position: {x: 0.039601, y: -0.00047099998, z: 0.000642}
+      rotation: {x: -0.0006283808, y: -0.0071254424, z: 0.0334873, w: 0.9994136}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandMiddle3
+      parentName: arissa:RightHandMiddle2
+      position: {x: 0.028599998, y: -0.002261, z: 0.000054999997}
+      rotation: {x: -0.00045177498, y: 0.00818614, z: -0.4422942, w: 0.8968326}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandMiddle4
+      parentName: arissa:RightHandMiddle3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandMiddle5
+      parentName: arissa:RightHandMiddle3
+      position: {x: 0.028461998, y: 0.000446, z: -0.000003}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandRing1
+      parentName: arissa:RightHand
+      position: {x: 0.099301994, y: 0.00592, z: -0.009586}
+      rotation: {x: -0.00032074377, y: -0.048528068, z: 0.006673676, w: 0.9987995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandRing2
+      parentName: arissa:RightHandRing1
+      position: {x: 0.038645, y: -0.00199, z: -0.000147}
+      rotation: {x: -0.00017247321, y: -0.0029279322, z: -0.004355296, w: 0.99998623}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandRing3
+      parentName: arissa:RightHandRing2
+      position: {x: 0.029119998, y: -0.001349, z: -0.000284}
+      rotation: {x: 0.010339789, y: 0.020829549, z: -0.54906625, w: 0.83545524}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandRing4
+      parentName: arissa:RightHandRing3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandRing5
+      parentName: arissa:RightHandRing3
+      position: {x: 0.021593, y: 0.001298, z: 0.00048599998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandPinky1
+      parentName: arissa:RightHand
+      position: {x: 0.09678, y: -0.001191, z: -0.025525}
+      rotation: {x: 0.0014242525, y: -0.04384143, z: -0.008462169, w: 0.9990016}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandPinky2
+      parentName: arissa:RightHandPinky1
+      position: {x: 0.030938, y: -0.000762, z: 0.00016799998}
+      rotation: {x: 0.00008341438, y: 0.0016633981, z: -0.006330136, w: 0.9999786}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandPinky3
+      parentName: arissa:RightHandPinky2
+      position: {x: 0.027225, y: -0.00064099993, z: 0.00023199999}
+      rotation: {x: 0.014937493, y: 0.026917731, z: -0.57193327, w: 0.81972235}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandPinky4
+      parentName: arissa:RightHandPinky3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightHandPinky5
+      parentName: arissa:RightHandPinky3
+      position: {x: 0.017246999, y: 0.001403, z: 0.000802}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftUpLeg
+      parentName: arissa:Hips
+      position: {x: -0.096338, y: -0.032732997, z: 0}
+      rotation: {x: -0.11668006, y: -0.1218257, z: -0.0750264, w: 0.98280996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftLeg
+      parentName: arissa:LeftUpLeg
+      position: {x: -0, y: -0.41357398, z: -0.008390999}
+      rotation: {x: 0.32780612, y: 0.06473644, z: 0.011247815, w: 0.9424573}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftFoot
+      parentName: arissa:LeftLeg
+      position: {x: -0.000126, y: -0.39562097, z: -0.017385}
+      rotation: {x: -0.1745042, y: 0.07435212, z: 0.056869302, w: 0.98019695}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftToeBase
+      parentName: arissa:LeftFoot
+      position: {x: 0.001833, y: -0.121930994, z: 0.082823}
+      rotation: {x: -0.0139101, y: -0.00000014696022, z: -0.000000048161617, w: 0.99990326}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:LeftFootToeBase_End
+      parentName: arissa:LeftToeBase
+      position: {x: -0, y: -0.000097000004, z: 0.141274}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightUpLeg
+      parentName: arissa:Hips
+      position: {x: 0.096338, y: -0.032732997, z: 0}
+      rotation: {x: -0.029839067, y: 0.1591262, z: 0.13047405, w: 0.97814363}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightLeg
+      parentName: arissa:RightUpLeg
+      position: {x: -0, y: -0.41357398, z: -0.008390999}
+      rotation: {x: 0.23476148, y: 0.01029095, z: 0.002291722, w: 0.9719959}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightFoot
+      parentName: arissa:RightLeg
+      position: {x: -0.000126, y: -0.39562097, z: -0.017385}
+      rotation: {x: -0.21007222, y: -0.27413782, z: 0.056376465, w: 0.936771}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightToeBase
+      parentName: arissa:RightFoot
+      position: {x: 0.001833, y: -0.121930994, z: 0.082823}
+      rotation: {x: -0.048293095, y: 0.0000002792873, z: 0.000000056114786, w: 0.99883324}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arissa:RightFootToeBase_End
+      parentName: arissa:RightToeBase
+      position: {x: -0.000032, y: -0.000097000004, z: 0.141274}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5

@@ -15,7 +15,7 @@ public abstract class PlayerControl : MonoBehaviour
     private Vector3 _dir;       // 動く向き
     private Camera _camera;
     private Vector3 _targetPos;
-    Circle _range;              // 攻撃範囲
+    Circle _range;              // 攻撃範囲    
 
     protected void Start(Animator anim)
     {
