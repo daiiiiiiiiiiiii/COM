@@ -5,12 +5,13 @@ using UnityEngine;
 public class CameraTrack : MonoBehaviour
 {
     [SerializeField]
-    GameObject _player;
+    private GameObject _player;
     Vector3 _offset;
     float _rotate;
     void Start()
     {
-        _offset = new Vector3(0, 2.8f, -6.4f);
+        // ここは要調整
+        _offset = new Vector3(0, 2.5f, -3f);
     }
 
     void Update()

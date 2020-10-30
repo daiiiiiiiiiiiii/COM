@@ -6,8 +6,7 @@ using UnityEngine;
 public abstract class PlayerControl : MonoBehaviour
 {
     protected Animator _animator;
-    protected Dictionary<int, string> _animName;
-    protected delegate int StateMethod();   // 状態ごとの処理を行うデリゲート
+    protected delegate void  StateMethod();   // 状態ごとの処理を行うデリゲート
     protected StateMethod State;
     [SerializeField]
     protected float _speed;     // キャラごとの速度 継承先で初期化
@@ -15,20 +14,15 @@ public abstract class PlayerControl : MonoBehaviour
     private Vector3 _dir;       // 動く向き
     private Camera _camera;
     private Vector3 _targetPos;
-    Circle _range;              // 攻撃範囲    
+    private bool _serchFlag;    // 敵が攻撃範囲内にいるかどうか
+    private Transform _enemy;   // 範囲内の敵の座標情報
 
     protected void Start(Animator anim)
     {
         _camera = FindObjectOfType<Camera>();
-        _range = transform.Find("Range").GetComponent<Circle>();
         State = Idle;     
-        // 状態ごとのアニメーション遷移に使う名前
-        _animName = new Dictionary<int, string>();
         _animator = anim;
-        for (var i = 0;i < _animator.parameters.Length;i++)
-        {
-            _animName.Add(i, _animator.parameters[(int)i].name);
-        }
+        _serchFlag = false;
     }
 
     private void Update()
@@ -44,7 +38,7 @@ public abstract class PlayerControl : MonoBehaviour
         }       
         else
         {
-            if (_range._serch != null)
+            if (_serchFlag)
             {
                 State = Attack;
             }
@@ -53,36 +47,57 @@ public abstract class PlayerControl : MonoBehaviour
                 State = Idle;
             }
         }
+        for (var i = 0; i < _animator.parameterCount; i++)
+        {
+            _animator.SetBool(_animator.parameters[i].name, false);
+        }
+        State();
         Debug.Log(State.Method);     
-        SetAnim(State());
     }
 
     //////ここから状態ごとのメソッド
-    private int Idle()
+    private void Idle()
     {
         // いまのところ何もしない
-        return 99;
+        
     }
     // 範囲内の敵へ攻撃
-    private int Attack()
+    private void Attack()
     {
-        _animator.SetBool(_animName[1], true);
-        return 1;
+        // 敵へのベクトル
+        _targetPos = _enemy.position - transform.position;
+        transform.localRotation = Quaternion.LookRotation(_targetPos);
+        _animator.SetBool("IsAction", true);
     }
 
     // 移動
-    private int Move()
+    private void Move()
     {
         _targetPos = _camera.transform.forward;
         var targetRot = Quaternion.LookRotation(_dir) * Quaternion.LookRotation(_targetPos);
         transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 5);
         transform.position += transform.forward * Time.deltaTime * _speed;
-        _animator.SetBool(_animName[0], true);
-        return 0;
+        _animator.SetBool("IsRun", true);
     }
     // 各キャラごとの実装
-    public abstract int Action();  // キャラ固有アクション
-    public abstract int Skill();   // カードスキル
+    public abstract void Action();  // キャラ固有アクション
+    public abstract void Skill();   // カードスキル
 
-    public abstract void SetAnim(int num);
+    private void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.tag == "Player" && _enemy == null)
+        {
+            _enemy = col.transform;
+            _serchFlag = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            _enemy = null;
+            _serchFlag = false;
+        }
+    }
 }
