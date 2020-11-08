@@ -12,7 +12,7 @@ public class CameraTrack : MonoBehaviour
     void Start()
     {
         // ここは要調整
-        _offset = new Vector3(0, 2.5f, -3f);
+        _offset = new Vector3(0, 2f,-5.8f);
     }
 
     void Update()

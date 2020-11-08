@@ -9,7 +9,7 @@ public abstract class PlayerControl : MonoBehaviour
     protected delegate void  StateMethod();   // 状態ごとの処理を行うデリゲート
     protected StateMethod State;
     [SerializeField]
-    protected float _speed = default;     // キャラごとの速度 継承先で初期化
+    protected float _speed = 1;     // キャラごとの速度 継承先で初期化
     protected Camera _camera;   // 追従してるカメラ
 
     private Vector3 _dir;       // 動く向き
