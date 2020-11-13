@@ -22,11 +22,10 @@ public class CameraTrack : MonoBehaviour
             _rotate = Input.GetAxis("Horizontal_R");
             AdjustmentPosition();
         }
-        //else
-        //{
-        //    _rotate = _player.transform.rotation;
-        //    AdjustmentFront();
-        //}
+        else
+        {
+            // AdjustmentFront();
+        }
         transform.position = _player.transform.position + _offset;
     }
 
@@ -39,7 +38,7 @@ public class CameraTrack : MonoBehaviour
 
     void AdjustmentFront()
     {
-
+        transform.rotation = _player.transform.rotation;
     }
 
     // プレイヤーがカメラの操作ができるかどうか設定するメソッド

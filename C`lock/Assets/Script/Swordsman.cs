@@ -5,7 +5,7 @@ public class Swordsman : PlayerControl
     Vector3 _nextPos;
     private float _time;
     [SerializeField]
-    private float _waitmin = default;   // アクション待ち時間
+    private float _waitMin = default;   // アクション待ち時間
     [SerializeField]
     private float _readyMin = default;  // アクション準備時間
 
@@ -17,22 +17,37 @@ public class Swordsman : PlayerControl
         base.Start(anim);
     }
 
-    public override void Skill()
+    public override StateMethod Skill()
     {
+        return Skill;
     }
 
-    public override void Action()
+    public override StateMethod Action()
     {
+        _camera.GetComponent<CameraTrack>().IsAvailable(false);
         // レム
-        if(_time < _waitmin)
+        if(_time < _waitMin)
         {
             Phase = Wait;// 待機時間
         }
-        else if(_time < _readyMin)
+        else if(_time < _readyMin + _waitMin)
         {
             Phase = Ready;
         }
         Phase();
+        _time += Time.deltaTime;
+        return Action;
+    }
+
+    public override StateMethod ActionTrigger()
+    {       
+        if (Run() == 0)
+        {
+            _time = 0;
+            _camera.GetComponent<CameraTrack>().IsAvailable(true);
+            return Idle;
+        }      
+        return ActionTrigger;
     }
 
     private int Wait()
@@ -49,8 +64,7 @@ public class Swordsman : PlayerControl
 
     private int Run()
     {
-        transform.position += transform.forward * _time;
-        _time += Time.deltaTime;
+        transform.position += transform.forward * _time;       
         Debug.Log("プレイヤー移動");
         return 0;
     }
