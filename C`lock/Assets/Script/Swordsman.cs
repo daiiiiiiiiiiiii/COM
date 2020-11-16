@@ -15,10 +15,9 @@ public class Swordsman : PlayerControl
     private GameObject _actRange = default; // アクション範囲
     [SerializeField]
     private GameObject _attRange = default; // 攻撃範囲
-    private Vector3 _actFirst;            // アクションの初期座標
+    private Vector3 _actFirst;              // アクションの初期座標
 
     delegate int PhaseMethod();
-    PhaseMethod Phase;
     void Start()
     {
         _actFirst = _actRange.transform.localPosition;
