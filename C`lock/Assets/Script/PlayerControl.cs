@@ -90,7 +90,7 @@ public abstract class PlayerControl : MonoBehaviour
         // _animator.SetBool("IsRun", true);
     }
     // 各キャラごとの実装
-    public abstract StateMethod Action();  // キャラ固有アクション
+    public virtual StateMethod Action() { return Action; }  // キャラ固有アクション
     public abstract StateMethod Skill();   // カードスキル
     public abstract StateMethod ActionTrigger();// アクショントリガーを離した時の挙動
 
