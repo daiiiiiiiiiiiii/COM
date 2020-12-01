@@ -7,10 +7,6 @@ public class RemAction : PlayerControl
     Vector3 _nextPos;
     private float _distance;
     [SerializeField]
-    private float _waitMin = default;   // アクション待ち時間
-    [SerializeField]
-    private float _readyMin = default;  // アクション準備時間
-    [SerializeField]
     private float _maxDistance = default;  // アクション距離
 
     [SerializeField]
@@ -37,7 +33,6 @@ public class RemAction : PlayerControl
         _actRange.SetActive(true);
         _attRange.SetActive(false);
         _actRange.transform.localPosition = transform.forward * _distance * _speed;
-        //_camera.GetComponent<CameraTrack>().IsAvailable(false);
         _distance = Mathf.Clamp(_distance * _speed + Time.deltaTime, 0, _maxDistance);
         return Action;
     }

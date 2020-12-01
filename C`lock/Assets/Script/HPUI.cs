@@ -27,5 +27,9 @@ public class HPUI : MonoBehaviour
     public void HitDamage()
     {
         _hp--;
+        if(_hp <= 0)
+        {
+
+        }
     }
 }
