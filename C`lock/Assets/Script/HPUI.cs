@@ -1,11 +1,31 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class HPUI : MonoBehaviour
 {
+    [SerializeField]
+    private float _hp = default;
+    private Slider _slider;
+    private void Start()
+    {
+        _slider = GetComponent<Slider>();
+        _slider.maxValue = _hp;
+        _slider.value = _hp;
+    }
+
     void LateUpdate()
     {
         transform.rotation = Camera.main.transform.rotation;
+    }
+
+    private void Update()
+    {
+        _slider.value = _hp;
+    }
+
+    public void HitDamage()
+    {
+        _hp--;
     }
 }

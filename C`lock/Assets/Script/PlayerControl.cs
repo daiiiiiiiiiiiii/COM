@@ -9,19 +9,20 @@ public abstract class PlayerControl : MonoBehaviour
     public delegate StateMethod StateMethod();   // 状態ごとの処理を行うデリゲート
     protected StateMethod State;
     [SerializeField]
-    protected float _speed = 1;     // キャラごとの速度 継承先で初期化
+    protected float _speed = 1; // キャラごとの速度 継承先で初期化
     protected Camera _camera;   // 追従してるカメラ
 
     private Vector3 _dir;       // 動く向き
     private Vector3 _targetPos; // 
     private bool _serchFlag;    // 敵が攻撃範囲内にいるかどうか
     private Transform _enemy;   // 範囲内の敵の座標情報
+    [SerializeField]
+    private HPUI _hp;           // HPを持つスクリプト
 
     protected void Start(Animator anim)
     {
         _camera = FindObjectOfType<Camera>();
         State = Idle;     
-        //_animator = anim;
         _serchFlag = false;
     }
 
@@ -52,11 +53,6 @@ public abstract class PlayerControl : MonoBehaviour
                 State = Idle;
             }
         }
-        
-        //for (var i = 0; i < _animator.parameterCount; i++)
-        //{
-        //    _animator.SetBool(_animator.parameters[i].name, false);
-        //}
         State = State();
         Debug.Log(State.Method);
     }
@@ -75,7 +71,6 @@ public abstract class PlayerControl : MonoBehaviour
         transform.localRotation = Quaternion.LookRotation(_targetPos);
         Debug.Log("攻撃中");
         return Attack;
-        // _animator.SetBool("IsAction", true);
     }
 
     // 移動
@@ -87,12 +82,19 @@ public abstract class PlayerControl : MonoBehaviour
         transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 5);
         transform.position += transform.forward * Time.deltaTime * _speed;
         return Move;
-        // _animator.SetBool("IsRun", true);
     }
     // 各キャラごとの実装
     public virtual StateMethod Action() { return Action; }  // キャラ固有アクション
     public abstract StateMethod Skill();   // カードスキル
     public abstract StateMethod ActionTrigger();// アクショントリガーを離した時の挙動
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "AttackBox")
+        {
+            _hp.HitDamage();
+        }
+    }
 
     private void OnTriggerStay(Collider col)
     {
