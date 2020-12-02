@@ -79,7 +79,7 @@ public abstract class PlayerControl : MonoBehaviour
         _targetPos = _camera.transform.forward;
         _targetPos.y = 0;
         var targetRot = Quaternion.LookRotation(_dir) * Quaternion.LookRotation(_targetPos);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 5);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, Time.deltaTime * 10);
         transform.position += transform.forward * Time.deltaTime * _speed;
         return Move;
     }
