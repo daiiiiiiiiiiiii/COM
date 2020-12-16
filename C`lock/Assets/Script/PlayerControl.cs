@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 // プレイヤーの基底クラス
@@ -8,6 +9,7 @@ public abstract class PlayerControl : MonoBehaviour
     protected Animator _animator;
     public delegate StateMethod StateMethod();   // 状態ごとの処理を行うデリゲート
     protected StateMethod State;
+    private StateMethod StateB;
     [SerializeField]
     protected float _speed = 1; // キャラごとの速度 継承先で初期化
     protected Camera _camera;   // 追従してるカメラ
@@ -19,11 +21,21 @@ public abstract class PlayerControl : MonoBehaviour
     [SerializeField]
     private HPUI _hp;           // HPを持つスクリプト
 
+    private Animator _anim;
+    private Dictionary<StateMethod,string> _animKey;
+
     protected void Start(Animator anim)
     {
+        _anim = anim;
+        _animKey = new Dictionary<StateMethod, string>() {
+            { Move,"IsRun" },
+            { Attack,"IsAttack01" },
+            { Action,"IsAttack02" }
+        };
         _camera = FindObjectOfType<Camera>();
         State = Idle;     
         _serchFlag = false;
+        StateB = Idle;
     }
 
     private void Update()
@@ -53,14 +65,18 @@ public abstract class PlayerControl : MonoBehaviour
                 State = Idle;
             }
         }
+        _anim.SetBool(_animKey[StateB], false);
+        _anim.SetBool(_animKey[State], true);
         State = State();
         Debug.Log(State.Method);
+        StateB = State;
     }
 
     //////ここから状態ごとのメソッド
     public StateMethod Idle()
     {
         // いまのところ何もしない
+        
         return Idle;  
     }
     // 範囲内の敵へ攻撃
