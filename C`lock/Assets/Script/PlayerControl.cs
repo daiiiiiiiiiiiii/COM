@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
 // プレイヤーの基底クラス
@@ -28,8 +27,9 @@ public abstract class PlayerControl : MonoBehaviour
     {
         _anim = anim;
         _animKey = new Dictionary<StateMethod, string>() {
+            { Idle,"IsIdle"},
             { Move,"IsRun" },
-            { Attack,"IsAttack01" },
+            { Kick,"IsAttack01" },
             { Action,"IsAttack02" }
         };
         _camera = FindObjectOfType<Camera>();
@@ -40,16 +40,24 @@ public abstract class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        if(_hp._hp<= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
         _dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        if (Input.GetAxis("HA") >= 0.8f)
+        if (Input.GetButtonDown("Panch"))
+        {
+            State = Kick;
+        }
+        else if (Input.GetButtonDown("Kick"))
         {
             State = Action;
         }
-        else if (State == ActionTrigger
-        || (State == Action && Input.GetAxis("HA") < 0.8f))
-        {
-            State = ActionTrigger;
-        }
+        //else if (State == ActionTrigger
+        //|| (State == Action && Input.GetAxis("HA") < 0.8f))
+        //{
+        //    State = ActionTrigger;
+        //}
         else if (_dir.magnitude != 0)
         {
             State = Move;
@@ -75,8 +83,7 @@ public abstract class PlayerControl : MonoBehaviour
     //////ここから状態ごとのメソッド
     public StateMethod Idle()
     {
-        // いまのところ何もしない
-        
+        // いまのところ何もしない     
         return Idle;  
     }
     // 範囲内の敵へ攻撃
@@ -87,6 +94,12 @@ public abstract class PlayerControl : MonoBehaviour
         transform.localRotation = Quaternion.LookRotation(_targetPos);
         Debug.Log("攻撃中");
         return Attack;
+    }
+
+    private StateMethod Kick()
+    {
+        Debug.Log("攻撃中");
+        return Kick;
     }
 
     // 移動

@@ -14,6 +14,8 @@ public class RemAction : PlayerControl
     [SerializeField]
     private GameObject _attRange = default; // 攻撃範囲
     private Vector3 _actFirst;              // アクションの初期座標
+    [SerializeField]
+    private Collider _collider;             // 攻撃判定
 
     delegate int PhaseMethod();
     void Start()
@@ -61,5 +63,15 @@ public class RemAction : PlayerControl
     private void Reset()
     {
         _actRange.transform.localPosition = _actFirst;
+    }
+
+    private void AttackBox()
+    {
+        _collider.enabled = true;
+    }
+
+    private void DeleteBox()
+    {
+        _collider.enabled = false;
     }
 }

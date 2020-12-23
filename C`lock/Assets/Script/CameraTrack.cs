@@ -31,8 +31,8 @@ public class CameraTrack : MonoBehaviour
 
     void AdjustmentPosition()
     {
-        transform.RotateAround(_player.transform.position, Vector3.up, _rotate);
-        var rot = Quaternion.Euler(new Vector3(0,_rotate,0));
+        transform.RotateAround(_player.transform.position, Vector3.up, _rotate * 3);
+        var rot = Quaternion.Euler(new Vector3(0,_rotate * 3,0));
         _offset = rot * _offset;
     }
 

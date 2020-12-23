@@ -5,7 +5,7 @@ using UnityEngine;
 public class HPUI : MonoBehaviour
 {
     [SerializeField]
-    private float _hp = default;
+    public float _hp = default;
     private Slider _slider;
     private void Start()
     {
